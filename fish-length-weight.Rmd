@@ -48,7 +48,7 @@ giant_trevally
 great_barracuda <- fish_standard_weight(0.0181, 3.27, 60)
 great_barracuda
 
-fish_length <- seq(from = 0, to = 200, by = 1)
+fish_length <- seq(from = 0, to = 200, by = 2)
 
 barracuda_weight <- fish_standard_weight(a = 0.0181, b = 3.27, L = fish_length)
 
