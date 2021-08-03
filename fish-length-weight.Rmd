@@ -1,0 +1,66 @@
+---
+title: "fish-length-weight"
+author: "Daniel Kerstan"
+date: "8/2/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+
+```
+
+# Header 1
+
+## Header 2
+
+### Header 3
+
+*Italics*
+
+**BOLD**
+
+-   1
+
+-   2
+
+    -   2.1
+    -   2.2
+
+text^super^
+
+text~sub~
+
+
+```{r}
+
+fish_standard_weight <- function(a, b, L) {
+  a *L^b
+}
+
+milkfish <- fish_standard_weight(a= 0.0905, b = 2.52, L = 60)
+milkfish
+
+giant_trevally <- fish_standard_weight(0.0353, 3.05, 60)
+giant_trevally
+
+great_barracuda <- fish_standard_weight(0.0181, 3.27, 60)
+great_barracuda
+
+fish_length <- seq(from = 0, to = 200, by = 1)
+
+barracuda_weight <- fish_standard_weight(a = 0.0181, b = 3.27, L = fish_length)
+
+barracuda_df <- data.frame(fish_length, barracuda_weight)
+
+ggplot(data = barracuda_df, aes(x = fish_length, y = barracuda_weight)) + 
+  geom_point() +
+  labs(x = "Fish Length (cm)", y = "weight (grams)", title = "Barracuda Weight")
+
+
+
+
+
+```
+
